@@ -10,6 +10,7 @@ on:
 jobs:
   unit-test:
     runs-on: ubuntu-18.04
+    steps:
     - name: Test
       shell: bash
       run: |
