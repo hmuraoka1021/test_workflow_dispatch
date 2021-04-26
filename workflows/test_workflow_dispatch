@@ -1,0 +1,16 @@
+name: scenario-test
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      tests:
+        description: '実行するテストを入力してください'
+        required: true
+        default: 'dns-common,dns-api,dns-job,dns-usage,dns-revip-monitoring,dns-agent,dns-webmanager,dns-monitoring'
+jobs:
+  unit-test:
+    runs-on: ubuntu-18.04
+    - name: Test
+      shell: bash
+      run: |
+        echo '#######test ${{github.event.inputs.tests}}#######'
