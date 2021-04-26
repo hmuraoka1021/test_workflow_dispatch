@@ -1,7 +1,9 @@
-name: scenario-test
+name: unit-test
 on:
   pull_request:
   workflow_dispatch:
+    branches:
+      - add_workflow
     inputs:
       tests:
         description: '実行するテストを入力してください'
